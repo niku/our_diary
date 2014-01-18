@@ -19,7 +19,7 @@
 //design
 body{ background-color: #f6f3ec !important;}
 header{ background: #fff; margin: 0 auto; padding: 20px 0 0 0; height: 90px;}
-.logo img { margin: 0 auto;}
+.logo { margin: 0 auto;}
 .wrapper { margin: 0 auto;}
 .box1 {margin: 50px 0;}
 
@@ -40,6 +40,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	font-size: 100%;
 	vertical-align: baseline;
 	background: transparent;
+	text-align: center;
 }
 body {
 	line-height: 1;
