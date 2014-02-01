@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'sinatra'
 enable :sessions
 
@@ -39,12 +40,12 @@ helpers do
     @notebooks ||= note_store.listNotebooks(auth_token)
   end
 
-  def total_note_count
+  def titles
     filter = Evernote::EDAM::NoteStore::NoteFilter.new
-    counts = note_store.findNoteCounts(auth_token, filter, false)
-    notebooks.inject(0) do |total_count, notebook|
-      total_count + (counts.notebookCounts[notebook.guid] || 0)
-    end
+    filter.words = "resource:image/*"
+    spec = Evernote::EDAM::NoteStore::NotesMetadataResultSpec.new
+    spec.includeTitle = true
+    note_store.findNotesMetadata(auth_token, filter, 0, 9, spec).notes.map(&:title)
   end
 end
 
@@ -119,7 +120,7 @@ get '/list' do
     # Get username
     session[:username] = en_user.username
     # Get total note count
-    session[:total_notes] = 5 #total_note_count
+    session[:titles] = titles
     erb :index
   rescue => e
     @last_error = "Error listing notebooks: #{e.message}"
@@ -139,7 +140,7 @@ __END__
 <a href="/requesttoken">Click here</a> to authenticate this application using OAuth.
 <% if session[:notebooks] %>
 <hr />
-<h3>The current user is <%= session[:username] %> and there are <%= session[:total_notes] %> notes in their account</h3>
+<h3>The current user is <%= session[:username] %> and there are <%= session[:titles] %> notes in their account</h3>
 <br />
 <h3>Here are the notebooks in this account:</h3>
 <ul>
