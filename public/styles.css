@@ -17,19 +17,9 @@ a { color: #444340; }
 
 .gallery { list-style: none; padding: 0; margin: 0; }
 .gallery:after { clear: both; content: "."; display: block; height: 0; visibility: hidden; }
-.gallery li { float: left; width: 33.33333333%; position: relative;
-    overflow: hidden; }
-.gallery li a { display: block;position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 1000%;
-    height: 2000px;/* 縦は用途応じて改変 */
-    line-height: 2000px;
-    margin:-1000px 0 0 -500%;
-    text-align: center;}
-.gallery li img { display: block; width: 100%; height: auto;min-height: 200px;
-    min-width: 10%;
-    vertical-align: middle; }
+.gallery li { float: left; width: 33.33333333%; }
+.gallery li a { display: block; margin: 5px; }
+.gallery li img { display: block; width: 100%; height: auto; }
 
 
 /* For inline examples only */
