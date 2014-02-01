@@ -8,7 +8,8 @@
     <link href="styles.css" type="text/css" rel="stylesheet" />
 
     <link href="photoswipe.css" type="text/css" rel="stylesheet" />
-
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="jquery.lazyload.min.js"></script>
     <script type="text/javascript" src="lib/klass.min.js"></script>
     <script type="text/javascript" src="code.photoswipe-3.0.5.min.js"></script>
 
@@ -59,7 +60,11 @@
         <li><a href="images/full/016.jpg"><img src="images/full/016.jpg" alt="Image 016" /></a></li>
         <li><a href="images/full/017.jpg"><img src="images/full/017.jpg" alt="Image 017" /></a></li>
         <li><a href="images/full/018.jpg"><img src="images/full/018.jpg" alt="Image 018" /></a></li>
-
+		<script type="text/javascript">
+		   $(function() {
+		      $("img.lazy").lazyload();
+		   });
+		</script>
       </ul>
 
     </div>
