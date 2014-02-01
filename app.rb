@@ -1,3 +1,7 @@
+require 'sinatra'
+
+get '/' do
+  %q{
 <div class="wrapper">
 	<header>
 		<div class="logo">
@@ -5,7 +9,7 @@
 		</div>
 	</header>
 		<div class="box1">
-		
+
 <div id='slider' class='swipe'>
   <div class='swipe-wrap'>
     <div><image src="http://upload.wikimedia.org/wikipedia/commons/6/6b/Happy_child.jpg"></image></div>
@@ -37,3 +41,5 @@ window.mySwipe = Swipe(elem, {
 // window.mySwipe = $('#mySwipe').Swipe().data('Swipe');
 
 </script>
+}
+end
