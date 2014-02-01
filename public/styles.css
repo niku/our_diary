@@ -19,7 +19,7 @@ a { color: #444340; }
 .gallery:after { clear: both; content: "."; display: block; height: 0; visibility: hidden; }
 .gallery li { float: left; width: 33.33333333%; height: 33.33333333%;  }
 .gallery li a { display: block; margin: 5px; }
-.gallery li img { display: block; width: 100%; height: auto; clip: rect(20px 50px 50px 20px); }
+.gallery li img { display: block; width: 100%; height: auto; position: absolute; clip: rect(20px 50px 50px 20px); }
 
 
 /* For inline examples only */
